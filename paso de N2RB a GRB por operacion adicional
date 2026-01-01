@@ -1,0 +1,23 @@
+ Sea definido un arbol RB tipo N2RB(es decir que ademas de ser RB valido, debe cumplir con ser N2RB valido, lo que implica que no debe tener ningun nodo con hijos ambos rojos)
+-sea una operacion particular extra definida bajo la garantia de N2RB valido(es decir que la operacion solo puede ser aplicada si el arbol cumple con ser N2RB valido)
+
+Bajo la garantia de existencia de rojo aislado(no hermano rojo, ademas de no padre/hijos rojos) se define la operacion de la siguiente forma:
+-sea un nodo negro padre de un nodo rojo(y por logica el otro es negro/nil)
+se propone que se realize un flip de color de ambos y una rotacion en sentido del hijo, tal que ambos cambian jerarquia, pero mantienen orden bst
+[se considera el flip y rotacion como operaciones que deben aplicarse juntas, ambas son solo una operacion]
+
+Esta operacion extra postula que no altera la altura negra ya establecida ni la validez del RB/N2RB, simpre que se de en un arbol N2RB validado.
+ademas se postula que la operacion es reversible(volverla a aplicar restaura el estado previo)
+ -en terminos de visibilidad es aparente que el nodo color rojo ha pasado a la rama hermana de forma lateral(aunque en realidad es el nodo padre el que pasa a se rojo ahi)
+ -reaplicar la operacion considerando el mismo rojo, solo revierte la jerarquia previa y aparentemente devuelve el nodo rojo a su lado previo.
+
+si bien la operacion es neutra con respecto a altura negra, no lo es con respecto a altura real/completa, notandose claramente una variacioon de -1 +1 en ramas hermanas, por tanto, en balanceo real
+ -se pone en hipotesis que una redistribucion adecuadamente uniforme de rojos por ruta puede mejorar el balance total del arbol(al igual que empeorarlo si no se usa algun criterio de cuando y como aplicar)
+ -se considera que la operación genera arboles N2RB equivalentes pero con posible diferencia en balanceo de altura real, prefiriendose los que tiendan a la uniformidad de rojos por ruta.
+
+de ahi simplemente (ja, 'simplemente'), solo hace falta la demostración de que tan balanceado puede ser el ajustado mediante el proceso de traslado lateral de rojos a rama hermana
+donde se mencionan posibles deseables resultados
+1)perfecto en balance(improbable o imposible) todas las rutas tiene igual cantidad de rojos, pero seria un arbol completo y muy probable sin rojos(lo cual técnicamente cumple pero...)
+2)perfectamente balanceado(las rutas son todas r o r-1 de rojos) teóricamente posible, pero falta demostracion que si desplazamiento lateral de rojos puede realmente acercarse asi a todas las rutas
+3)muy balanceado(tipo avl) rutas con rojo y sin rojo hermanas solo varian en 1(muy probable considerando la misma naturaleza del arbol)[aqui se deberia intentar probar que el balanceo del peor caso es similar al avl peor caso]
+4)igual a RB clasico(ninguna mejora, pero acotado por el limite natural del RB)
