@@ -14,9 +14,10 @@ la operacion es la siguiente(y simetrica para el otro caso):
 
 Sea el padre y el hijo izquierdo rojo, se realiza una rotacion talque:
 
-padre->izq apunta a hijo->der
-hijo->der apunta a padre
-el puntero que apunta desde arriba al padre apunta al hijo(o se retorna la nueva cabecera)
+1)padre->izq apunta a hijo->der
+2)hijo->der apunta a padre
+3)el puntero que apunta desde arriba al padre apunta al hijo(o se retorna la nueva cabecera)
+4)dado que los hijos del ahora nodo rojo son: uno negro por ser hijo del previo rojo, y el otro el hermano negro, no hay generacion de violacion rojo rojo.
 
 Efectivamente cambiando la jerarquia mediante una rotacion, pero respetando orden bst.
 
@@ -34,4 +35,6 @@ Mediante esta demostración se indica que es una operacion neutra con respecto a
 Pero, y esto es importante, la rotacion si  produce una variacion de altura real con respecto a las ramas hermanas involucradas, donde la rama que cede el rojo pierde altura y la otra gana altura por el simple hecho de rotar, fuera del hecho de ganar/perder un nodo rojo(considerando que la altura real es rojos+negros y estos son constantes)
 
 por tanto la operacion añadida puede segun criterio de aplicacion, mejorar o empeorar el balance de altura real, pero sin alterar la altura negra.
+
+Por conclusion, dado un arbol N2SRB, se puede aplicar la operacion añadida (que denominaremos refinar o graduar) segun algun criterio, para generar diferentes configuraciones de arbol equivalentes, de las cuales unas estaran mas equilibradas que otras.
 
