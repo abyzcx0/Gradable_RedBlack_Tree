@@ -34,5 +34,5 @@ A nivel local se ha corregido el problema, pero el cambio del padre a rojo puede
 
 Una vez que todas las correcciones se han propagado hacia arriba, se obtiene un arbol con lo que denominaremos 'rojos aislados'(padre negro, hijos negros, hermano negro).
 
-Si todo el arbol cumple con esa característica ,entonces lo denominaremos un arbol N2SRB(not 2 siblings red, black) tal que pertenece y cumple con las reglas RB clasicas, ademas de la regla adicional de prohibir hermanos ambos rojos.
+Si todo el arbol cumple con esa característica, entonces lo denominaremos un arbol N2SRB(not 2 siblings red, black), tal que pertenece y cumple con las reglas RB clasicas, ademas de la regla adicional de prohibir hermanos ambos rojos.
 
