@@ -30,3 +30,5 @@ A) El arbol es RB valido, acotado a una diferencia de altura real de 1 entre ram
 
 B) se da lugar a una estructura donde solo existe rojos aislados(no tiene hermanos ambos rojos), con desbalance arbitrario entre ramas en lo mas posible sin romper RB con la menor cantidad de nodos usados.
 
+Si bien tiene el nombre fibonacci por su tipo de recursion, se aclara que en cantidad de nodos es una secuencia de Fibonacci modificada donde cada término es la suma de los dos anteriores más 1 (una raiz nueva con 2 subarboles previos) 
+
