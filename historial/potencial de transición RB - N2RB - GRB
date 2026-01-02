@@ -1,3 +1,0 @@
-un arbol binario RB puede ser pasado a N2RB por medio de aislamiento de nodos rojos, y una vez qu es N2RB valido, puede ser ajustado a un equivalente optimo GRB por traslacion de rojos.
-pasar de RB a GRB requiere el paso intermedio N2RB( de forma completa, no se ha investigado si de forma aislada, pero si cumple el aislamiento de rojos localmente, es posible, o al menos despues requiere correcciones rojo rojo)
-pasar de GRB a N2RB o RB solo requiere dejar de aplicar reglas adicionales(refinamiento en el N2RB, e ignorar ademas la regla de hermanos ambos rojos para el RB)
