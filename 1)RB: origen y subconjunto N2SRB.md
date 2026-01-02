@@ -1,22 +1,18 @@
-Para que un árbol sea considerado Rojo-Negro valido, debe cumplir estrictamente estas cinco propiedades en todo momento estático:
+Para que un árbol sea considerado Rojo-Negro valido, debe cumplir estrictamente estas cinco propiedades:
 
 A)​Cada nodo es rojo o negro.
-
 B)​La raíz siempre es negra.
-
 C)​Las hojas (nodos NIL/vacíos) son negras.
-
 D)​Si un nodo es rojo, sus hijos deben ser negros. (No puede haber dos nodos rojos seguidos en un camino).
-
 E)​Propiedad del camino negro: Cualquier camino/ruta desde un nodo hasta sus hojas descendientes debe contener el mismo número de nodos negros.
 
-ahora bien, se considera una variante subconjunto de arboles RB con una restricción adicional para considerarse valido dentro del mismo subconjunto:
+Ahora bien, se considera una variante subconjunto de arboles RB con una restricción adicional para ser valido dentro del mismo subconjunto:
 
-F)No debe tener sus nodos hijos ambos rojos: puede tener ambos hijos negro/NIL, o un nodo negro/NIL y otro rojo; independiente de la lateralidad, pero no ambos hijos rojos (por tanto, no debe existir hermanos rojos, de darse el caso se considera que requiere correccion)
+F)No debe tener sus nodos hijos ambos rojos: los nodos hijos pueden ser ambos negros/NIL o solo uno y el otro rojo; independiente de la lateralidad, pero no ambos hijos rojos (por tanto, no debe existir hermanos rojos, de darse el caso se considera que requiere correccion).
 
-Esta restriccion adicional no es parte del funcionamiento del grupo RB clasico, pero tampoco invalida su pertenencia a él.
+*Esta restriccion adicional no es parte del funcionamiento del grupo RB clasico, pero los arboles resultantes son validos RB.
 
-Ahora bien, dado el caso de hermanos ambos rojos y siendo considerado invalido y a corregir, se ha de describir la forma correspondiente de tratar con ello:
+Ahora bien, dado el caso de hermanos ambos rojos, siendo considerado invalido y a corregir, se necesita una forma de tratar con ello.
 
 Para mantener las igualdades en altura negra, y bajo la garantia que no se esta dando en el mismo tiempo una violacion rojo rojo de tipo padre/hijo, se consideran los nodos presentados  en la siguiente estructura y disposición:
 
@@ -36,3 +32,5 @@ Una vez que todas las correcciones se han propagado hacia arriba, se obtiene un 
 
 Si todo el arbol cumple con esa característica, entonces lo denominaremos un arbol N2SRB(not 2 siblings red, black), tal que pertenece y cumple con las reglas RB clasicas, ademas de la regla adicional de prohibir hermanos ambos rojos.
 
+
+Ademas, dado el arbol N2SRB valido, por medio de cierta operacion de refinacion/rebalance local se puede generar un conjunto de arboles equivalentes pero de alturas reales variables(manteniendo altura negra constante), de los cuales se considera el mas cercano a perfectamente balanceado el arbol GRB objetivo. pero eso es explicado en otra seccion.
