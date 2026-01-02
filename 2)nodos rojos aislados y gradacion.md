@@ -23,18 +23,17 @@ Efectivamente cambiando la jerarquia mediante una rotacion, pero respetando orde
 
 Sin embargo, esto por si solo desbalancea la cantidad de nodos rojos/negros por ruta.
 
-para arreglarlo, se realiza un cambio de coloracion en ambos nodos(padre e hijo pasan al color cpntrario)
+para arreglarlo, se realiza un cambio de coloracion en ambos nodos(padre e hijo pasan al color contrario)
 *se recomienda la recoloracion previa rotación, y considerar ambas operaciones inseparables.
 
-El resultado es que el nuevo nodo superior(hijo previo, es negro, conservando la negrura inicial para todas las rutas involucradas, el camino derecho de el es ahora rojo(previo padre), pero observamos que ahora a ese nivel el rojo esta "del otro lado"(a la derecha)
+El resultado es que el nuevo nodo superior(hijo previo), es negro, conservando la negrura inicial para todas las rutas involucradas, el camino derecho de el es ahora rojo(previo padre), pero observamos que ahora a ese nivel el rojo esta "del otro lado"(a la derecha)
 
 Ahora bien, si se aplica el traslado hacia el otro lado se obtiene el orden original.
 
 Mediante esta demostración se indica que es una operacion neutra con respecto a la altura negra y no genera violacion de reglas en N2SRB.
 
-Pero, y esto es importante, la rotacion si  produce una variacion de altura real con respecto a las ramas hermanas involucradas, donde la rama que cede el rojo pierde altura y la otra gana altura por el simple hecho de rotar, fuera del hecho de ganar/perder un nodo rojo(considerando que la altura real es rojos+negros y estos son constantes)
+Pero, y esto es importante, la rotacion si  produce una variacion de altura real con respecto a las ramas hermanas involucradas, donde la rama que cede el rojo pierde altura y la otra gana altura por el simple hecho de rotar ademas de ganar/perder un nodo rojo(considerando que la altura real es rojos+negros, y estos son constantes para cualquier ruta).
 
 por tanto la operacion añadida puede segun criterio de aplicacion, mejorar o empeorar el balance de altura real, pero sin alterar la altura negra.
 
-Por conclusion, dado un arbol N2SRB, se puede aplicar la operacion añadida (que denominaremos refinar o graduar) segun algun criterio, para generar diferentes configuraciones de arbol equivalentes, de las cuales unas estaran mas equilibradas que otras.
-
+Por conclusion, dado un arbol N2SRB, se puede aplicar la operacion añadida (que denominaremos refinar o graduar o traslado) segun algun criterio, para generar diferentes configuraciones de arbol equivalentes, de las cuales unos estaran mas equilibrados que otros en altura real.
